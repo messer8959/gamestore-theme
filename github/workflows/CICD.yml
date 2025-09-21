@@ -1,0 +1,83 @@
+name: GameStore Deploy
+
+on: 
+  push: 
+    branches: 
+      - dev
+  release:
+    types: [published]
+
+jobs: 
+  deploy: 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Prepare Wordpress Zip
+      run: |
+        WP_LINK=$(cat wp-version-control.cfg)
+        wget -O "./wordpress.zip" $WP_LINK 
+
+    - name: Prepare plugins and themes zip
+      run: zip -r wpcontent.zip plugins mu-plugins themes
+
+    - name: Copy zips to server 
+      uses: appleboy/scp-action@master
+      with: 
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        source: ".wordpress.zip, ./wpcontent.zip"
+        target: ${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}
+
+    - name: Enable Maintenance Mode  
+      uses: appleboy/scp-action@master
+      with: 
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        source: ".maintenance"
+        target: ${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}
+
+    - name: Update Wordpress Core
+      uses: appleboy.ssh-action@v1.0.3
+      with: 
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}    
+        script: | 
+          find "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}" -type f -name "*php" ! -name "wp-config.php" -delete
+          rm -r "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-admin/" "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-includes/"
+          unzip -o "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wordpress.zip/" -d "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/"
+          mv "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wordpress/*" "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/"
+          rm -r "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wordpress"
+        
+    - name: Update Plugins and Theme
+      uses: appleboy.ssh-action@v1.0.3
+      with: 
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}    
+        script: 
+          rm -rf "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-content/plugins" "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-content/mu-plugins" "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-content/themes"
+          unzip -o "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wpcontent.zip" -d "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wp-content/"
+
+
+    - name: Disable Maintenance Mode and Remove zips
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          rm -f "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/.maintenance"
+          rm -f "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wpcontent.zip"
+          rm -f "${{ github.event_name == 'push' && 'public_html/dev.wpcat1.pl' || 'public_html/live.wpcat1.pl' }}/wordpress.zip"
+          
