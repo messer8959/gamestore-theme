@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Display Some Text
         run: echo "Some Text"
-      - name: Command in Multiline
+      - name: Command in Multiline1
         run: |
           node -v
           npm -v
