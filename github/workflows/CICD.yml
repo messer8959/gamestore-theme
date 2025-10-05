@@ -54,7 +54,7 @@ jobs:
           find "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}" -type f -name "*.php" ! -name "wp-config.php" -delete
           rm -r "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wp-admin/" "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wp-includes/"
           unzip -o "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wordpress.zip/" -d "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/"
-          mv "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wordpress/*" "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/"
+          mv "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wordpress"/* "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/"
           rm -r "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wordpress"
         
     - name: Update Plugins and Theme
