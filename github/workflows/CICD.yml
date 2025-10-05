@@ -69,7 +69,7 @@ jobs:
           unzip -o "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wpcontent.zip" -d "${{ github.event_name == 'push' && 'https://dev.wpcat1.pl/' || 'public_html/live.wpcat1.pl' }}/wp-content/"
 
 
-    - name: Disable Maintenance Mode and Remove zips
+    - name: Disable Maintenance Mode and Remove zips1
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST }}
