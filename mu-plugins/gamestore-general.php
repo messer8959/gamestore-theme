@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       Cyr-To-Lat
+ * Plugin Name:       General
  * Description:       Core code for GameStore
  * Version:           1.0
  * Author:            WPcat
@@ -9,10 +9,11 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-function gamestore_remove_dashboard_vidgets() {
+function gamestore_remove_dashboard_vidgets()
+{
     global $wp_meta_boxes;
 
-    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']); 
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
     unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
@@ -25,3 +26,21 @@ function gamestore_remove_dashboard_vidgets() {
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
 }
 add_action('wp_dashboard_setup', 'gamestore_remove_dashboard_vidgets');
+
+
+// Allow load SVG files from library
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
+// Fix SVG display in media library
+add_filter('wp_check_filetype_and_ext', function () {
+    echo '<style>
+        .attachment .thumbnail img[src$=".svg"], 
+        .media-icon img[src$=".svg"] {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>';
+}, 10, 4);
