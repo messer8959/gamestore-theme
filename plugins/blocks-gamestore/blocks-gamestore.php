@@ -15,7 +15,17 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
+} 
+
+add_filter('block_categories_all', function($categories){
+	return array_merge($categories, [
+		[
+			'slug' => 'gamestore',
+			'title' => 'GameStore'
+		]
+		]);
 }
+);
 
 function create_block_blocks_gamestore_block_init() {
 
@@ -33,6 +43,7 @@ function create_block_blocks_gamestore_block_init() {
 	foreach ( array_keys( $manifest_data ) as $block_type ) {
 		register_block_type( __DIR__ . "/build/block-hero" );
 		register_block_type( __DIR__ . "/build/block-contact" );
+		register_block_type( __DIR__ . "/build/block-header" );
 	}
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );

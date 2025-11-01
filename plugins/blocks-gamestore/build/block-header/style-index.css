@@ -1,0 +1,172 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-header/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.wp-block-blocks-gamestore-block-header {
+  min-height: 100px;
+  display: flex;
+  width: 100%;
+  background: var(--background-default, #FAFAFA);
+  color: var(--text-primary, #0E0D0F);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  position: relative;
+}
+.wp-block-blocks-gamestore-block-header a {
+  text-decoration: none;
+}
+.wp-block-blocks-gamestore-block-header .inner-header {
+  padding: 0 32px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.wp-block-blocks-gamestore-block-header .inner-header .right-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.wp-block-blocks-gamestore-block-header .inner-header .header-search,
+.wp-block-blocks-gamestore-block-header .inner-header .header-mode-switcher {
+  cursor: pointer;
+}
+.wp-block-blocks-gamestore-block-header .inner-header .header-member-link a {
+  display: flex;
+  height: 40px;
+  padding: 4px 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--divider-main, rgba(14, 13, 15, 0.08));
+  color: var(--text-primary, #0E0D0F);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wp-block-blocks-gamestore-block-header .inner-header .header-member-link a:hover {
+  text-decoration: underline;
+}
+.wp-block-blocks-gamestore-block-header .inner-header .header-member-link a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-primary, #0E0D0F);
+}
+
+@media (max-width: 600px) {
+  .wp-block-blocks-gamestore-block-header .wp-block-navigation__responsive-container.is-menu-open {
+    background-image: url(../images/mobile.395d7d8c.png) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff !important;
+  }
+  .wp-block-navigation__responsive-container-content {
+    padding-top: calc(3rem + 24px) !important;
+  }
+  .wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close {
+    background-color: #b6b6b6;
+    border-radius: 50%;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header {
+    padding: 0 16px;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group {
+    padding: 0;
+    width: calc(100% - 180px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group .wp-block-site-logo {
+    margin: 0 !important;
+    max-width: 140px;
+    z-index: 1000001;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group .wp-block-navigation {
+    margin: 0 !important;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group .wp-block-navigation__responsive-container-open svg {
+    display: none;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group .wp-block-navigation__responsive-container-open {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url("data:image/svg+xml,<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M27 13.75H9C8.59 13.75 8.25 13.41 8.25 13C8.25 12.59 8.59 12.25 9 12.25H27C27.41 12.25 27.75 12.59 27.75 13C27.75 13.41 27.41 13.75 27 13.75Z\" fill=\"%230E0D0F\" fill-opacity=\"0.64\"/><path d=\"M27 18.75H9C8.59 18.75 8.25 18.41 8.25 18C8.25 17.59 8.59 17.25 9 17.25H27C27.41 17.25 27.75 17.59 27.75 18C27.75 18.41 27.41 18.75 27 18.75Z\" fill=\"%230E0D0F\" fill-opacity=\"0.64\"/><path d=\"M27 23.75H9C8.59 23.75 8.25 23.41 8.25 23C8.25 22.59 8.59 22.25 9 22.25H27C27.41 22.25 27.75 22.59 27.75 23C27.75 23.41 27.41 23.75 27 23.75Z\" fill=\"%230E0D0F\" fill-opacity=\"0.64\"/></svg>");
+    background-position: center;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .right-section {
+    gap: 8px;
+  }
+  .wp-block-blocks-gamestore-block-header .inner-header .right-section .header-member-link a {
+    font-size: 0;
+    border: 0;
+    width: 36px;
+    height: 36px;
+    display: block;
+    background: url("data:image/svg+xml,<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.1605 17.62C18.1305 17.62 18.1105 17.62 18.0805 17.62C18.0305 17.61 17.9605 17.61 17.9005 17.62C15.0005 17.53 12.8105 15.25 12.8105 12.44C12.8105 9.58 15.1405 7.25 18.0005 7.25C20.8605 7.25 23.1905 9.58 23.1905 12.44C23.1805 15.25 20.9805 17.53 18.1905 17.62C18.1805 17.62 18.1705 17.62 18.1605 17.62ZM18.0005 8.75C15.9705 8.75 14.3105 10.41 14.3105 12.44C14.3105 14.44 15.8705 16.05 17.8605 16.12C17.9105 16.11 18.0505 16.11 18.1805 16.12C20.1405 16.03 21.6805 14.42 21.6905 12.44C21.6905 10.41 20.0305 8.75 18.0005 8.75Z\" fill=\"%230E0D0F\" fill-opacity=\"0.64\"/><path d=\"M18.1696 28.55C16.2096 28.55 14.2396 28.05 12.7496 27.05C11.3596 26.13 10.5996 24.87 10.5996 23.5C10.5996 22.13 11.3596 20.86 12.7496 19.93C15.7496 17.94 20.6096 17.94 23.5896 19.93C24.9696 20.85 25.7396 22.11 25.7396 23.48C25.7396 24.85 24.9796 26.12 23.5896 27.05C22.0896 28.05 20.1296 28.55 18.1696 28.55ZM13.5796 21.19C12.6196 21.83 12.0996 22.65 12.0996 23.51C12.0996 24.36 12.6296 25.18 13.5796 25.81C16.0696 27.48 20.2696 27.48 22.7596 25.81C23.7196 25.17 24.2396 24.35 24.2396 23.49C24.2396 22.64 23.7096 21.82 22.7596 21.19C20.2696 19.53 16.0696 19.53 13.5796 21.19Z\" fill=\"%230E0D0F\" fill-opacity=\"0.64\"/></svg>");
+  }
+  .dark-mode-gamestore .wp-block-blocks-gamestore-block-header .inner-header .right-section .header-member-link a {
+    background: url("data:image/svg+xml,<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M18.1605 17.62C18.1305 17.62 18.1105 17.62 18.0805 17.62C18.0305 17.61 17.9605 17.61 17.9005 17.62C15.0005 17.53 12.8105 15.25 12.8105 12.44C12.8105 9.58 15.1405 7.25 18.0005 7.25C20.8605 7.25 23.1905 9.58 23.1905 12.44C23.1805 15.25 20.9805 17.53 18.1905 17.62C18.1805 17.62 18.1705 17.62 18.1605 17.62ZM18.0005 8.75C15.9705 8.75 14.3105 10.41 14.3105 12.44C14.3105 14.44 15.8705 16.05 17.8605 16.12C17.9105 16.11 18.0505 16.11 18.1805 16.12C20.1405 16.03 21.6805 14.42 21.6905 12.44C21.6905 10.41 20.0305 8.75 18.0005 8.75Z\" fill=\"white\" fill-opacity=\"0.64\"/><path d=\"M18.1696 28.55C16.2096 28.55 14.2396 28.05 12.7496 27.05C11.3596 26.13 10.5996 24.87 10.5996 23.5C10.5996 22.13 11.3596 20.86 12.7496 19.93C15.7496 17.94 20.6096 17.94 23.5896 19.93C24.9696 20.85 25.7396 22.11 25.7396 23.48C25.7396 24.85 24.9796 26.12 23.5896 27.05C22.0896 28.05 20.1296 28.55 18.1696 28.55ZM13.5796 21.19C12.6196 21.83 12.0996 22.65 12.0996 23.51C12.0996 24.36 12.6296 25.18 13.5796 25.81C16.0696 27.48 20.2696 27.48 22.7596 25.81C23.7196 25.17 24.2396 24.35 24.2396 23.49C24.2396 22.64 23.7096 21.82 22.7596 21.19C20.2696 19.53 16.0696 19.53 13.5796 21.19Z\" fill=\"white\" fill-opacity=\"0.64\"/></svg>");
+  }
+  .dark-mode-gamestore .wp-block-blocks-gamestore-block-header .inner-header .wp-block-group .wp-block-navigation__responsive-container-open {
+    background: url("data:image/svg+xml,<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M27 13.75H9C8.59 13.75 8.25 13.41 8.25 13C8.25 12.59 8.59 12.25 9 12.25H27C27.41 12.25 27.75 12.59 27.75 13C27.75 13.41 27.41 13.75 27 13.75Z\" fill=\"white\" fill-opacity=\"0.64\"/><path d=\"M27 18.75H9C8.59 18.75 8.25 18.41 8.25 18C8.25 17.59 8.59 17.25 9 17.25H27C27.41 17.25 27.75 17.59 27.75 18C27.75 18.41 27.41 18.75 27 18.75Z\" fill=\"white\" fill-opacity=\"0.64\"/><path d=\"M27 23.75H9C8.59 23.75 8.25 23.41 8.25 23C8.25 22.59 8.59 22.25 9 22.25H27C27.41 22.25 27.75 22.59 27.75 23C27.75 23.41 27.41 23.75 27 23.75Z\" fill=\"white\" fill-opacity=\"0.64\"/></svg>");
+  }
+}
+@media (min-width: 600px) {
+  .wp-block-group {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    position: static;
+  }
+  .wp-block-group .wp-block-navigation {
+    margin-top: 0 !important;
+    position: static;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__responsive-container {
+    position: static;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__responsive-container .wp-block-navigation__responsive-dialog {
+    position: static;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__container {
+    position: static;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-item {
+    position: static;
+    background: transparent;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-item.current-menu-item {
+    color: var(--purple-main, #6F76C0);
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__submenu-container {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    min-height: 52px;
+    background: var(--secondary-48, rgba(250, 250, 250, 0.48));
+    color: var(--white-contrast, #0A090A);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding-left: 300px;
+  }
+  .wp-block-group .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
+    left: 0;
+    top: 100%;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
