@@ -1,9 +1,24 @@
 <?php
 
 function gamestore_styles() {
+	// Дереєструєм jquery
+	wp_deregister_script('jquery');
+	// Реєструєм свою версію jquery
+	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js');
+	// Підключаєм свою версію jquery
+	wp_enqueue_script('jquery');
+
 	wp_enqueue_style('gamestore-general',	get_template_directory_uri() . '/assets/css/gamestore.css',[],wp_get_theme()->get( 'Version' ));
 	wp_enqueue_script('gamestore-theme-related',	get_template_directory_uri() . '/assets/js/gamestore-theme-related.js',[],wp_get_theme()->get( 'Version' ),true);
-}
+
+	// // //Swiper css
+	// wp_enqueue_style('swiper-bundle',	get_template_directory_uri() . '/assets/css/swiper-bundle.min.css',[],wp_get_theme()->get( 'Version' ));
+	// wp_enqueue_script('swiper-bundle',	get_template_directory_uri() . '/assets/js/swiper.js',[],wp_get_theme()->get( 'Version' ),true);
+
+	// Slick css
+	wp_enqueue_style('slick-bundle',	get_template_directory_uri() . '/assets/css/slick.css',[],wp_get_theme()->get( 'Version' ));
+	wp_enqueue_script('slick-bundle',	get_template_directory_uri() . '/assets/js/slick.js',array('jquery'),wp_get_theme()->get( 'Version' ),true);
+  }
 add_action( 'wp_enqueue_scripts', 'gamestore_styles' );
 
 function gamestore_google_font() {

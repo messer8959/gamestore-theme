@@ -1,24 +1,62 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
-export default function save() {
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+
+export default function save({ attributes }) {
+	const { title, description, link, video, linkAnchor, image, slides } = attributes;
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Blocks Gamestore – hello from the saved content!' }
-		</p>
+		<div {...useBlockProps.save()}>
+			<div className='hero-content'>
+				<RichText.Content
+					tagName="h1"
+					className="hero-title"
+					value={title}
+				/>
+				<RichText.Content
+					tagName="p"
+					className="hero-description"
+					value={description}
+				/>
+				{linkAnchor && (
+					<a href={link} className="hero-button shadow">
+						{linkAnchor}
+					</a>
+				)}
+			</div>
+			{video && (
+				<video className='video-bg' loop="loop" autoplay="" muted playsinline width="100%" height="100%">
+					<source className='source-element' src={video} type="video/mp4" />
+				</video>
+			)}
+			{image && <img className='image-bg' src={image} alt="Hero Background" />}
+			<div className='hero-mask'></div>
+			{slides &&
+				<div className='hero-slider'>
+					<div className='slider-container'>
+						<div className='slider-wrapper'>
+							{slides.map((slide, index) => (
+								<div className='slide-item' key={index}>
+									{slide.lightImage && (
+										<img
+											src={slide.lightImage}
+											alt={`Slide ${index + 1} Light Version`}
+											className="light-logo"
+										/>
+									)}
+									{slide.darkImage && (
+										<img
+											src={slide.darkImage}
+											alt={`Slide ${index + 1} Dark Version`}
+											className="dark-logo"
+										/>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+
+			}
+
+		</div>
 	);
 }
