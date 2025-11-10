@@ -86,7 +86,9 @@ video {
 	font-size: 100%;
 	/* font: inherit; */
 	vertical-align: baseline;
+	text-decoration: none;
 }
+
 p {
 	line-height: 1.3;
 }
@@ -109,6 +111,14 @@ section {
 body {
 	line-height: 1;
 	font-style: normal;
+	font-family: Urbanist, sans-serif;
+	font-size: clamp(1rem, calc(0.93rem + 0.33vw), 1.25rem);
+	line-height: 1.6;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	max-width: 100vw;
+	overflow-x: hidden;
+	color: var(--text-primary);
 }
 
 ol,
@@ -147,10 +157,7 @@ html {
 	}
 }
 
-body {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-}
+
 
 /* Variables */
 :root {
@@ -159,17 +166,94 @@ body {
 	--action-main-svg: rgb(14, 13, 15);
 	--divider-main: rgba(14, 13, 15, 0.08);
 	--text-primary: #0E0D0F;
+	--text-secondary: rgba(14, 13, 15, 0.70);
 	--secondary-48: rgba(250, 250, 250, 0.48);
 	--white-contrast: #0A090A;
 	--purple-main: #6F76C0;
+	--mask-gradient: linear-gradient(270deg, rgba(14, 13, 5, 0.00) 0%, #ECECEC 79.5%);
+	--mask-gradient-second: linear-gradient(180deg, rgba(250, 250, 250, 0.00) 0%, #FAFAFA 100%);
+	--accent-gradient: linear-gradient(90deg, #3DAFE2 0%, #6F76C0 100%);
 }
 
 .dark-mode-gamestore {
 	--background-default: #0E0D0F;
-	--action-main: rgba(255, 255, 255, 0.64); 
-	--action-main-svg: rgb(255, 255, 255); 
+	--action-main: rgba(255, 255, 255, 0.64);
+	--action-main-svg: rgb(255, 255, 255);
 	--divider-main: rgba(255, 255, 255, 0.12);
 	--text-primary: #FFFFFF;
+	--text-secondary: rgba(225, 225, 225, 0.70);
 	--secondary-48: rgba(14, 13, 15, 0.60);
 	--white-contrast: #FFFFFF;
+	--wp--preset--color--base: #0E0D0F;
+	--wp--preset--color--contrast: #FFFFFF;
+	--mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0.00) 0%, #0D0B0F 79.5%);
+	--mask-gradient-second: linear-gradient(180deg, rgba(14, 13, 15, 0.00) 0%, #0E0D0F 100%);
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1540px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: Urbanist;
+	font-size: normal;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0;
+}
+
+h1 {
+	font-size: clamp(2.5rem, calc(2.11rem + 1.97vw), 4rem);
+}
+
+h2 {
+	font-size: clamp(2.25rem, calc(1.95rem + 1.48vw), 3.38rem);
+}
+
+h3 {
+	font-size: clamp(2rem, calc(1.8rem + 0.98vw), 2.75rem);
+}
+
+h4 {
+	font-size: clamp(1.75rem, calc(1.65rem + 0.49vw), 2.13rem);
+}
+
+h5 {
+	font-size: clamp(1.5rem, calc(1.4rem + 0.49vw), 1.88rem);
+}
+
+.hero-button {
+	border-radius: 5px;
+	display: flex;
+	padding: 20px 32px;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 140%;
+	letter-spacing: 2.1px;
+	text-transform: uppercase;
+	background: var(--accent-gradient, linear-gradient(90deg, #3DAFE2 0%, #6F76C0 100%));
+	transition: all 0.3s ease-in-out;
+
+	&.shadow {
+		box-shadow: 0px 16px 24px 0px rgba(61, 175, 226, 0.46);
+	} 
+
+	&:hover {
+		background: linear-gradient(90deg, #6F76C0 0%, #555ba5 100%);
+		transition: all 0.3s ease-in-out;
+ 
+		&.shadow {
+			box-shadow: 0px 8px 12px -6px rgba(61, 175, 226, 0.46);
+			transition: all 0.3s ease-in-out;
+		}
+	}
 }
