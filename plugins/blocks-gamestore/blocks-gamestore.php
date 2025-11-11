@@ -17,6 +17,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 } 
 
+define( 'BLOCKS_GAMESTORE_PATH', plugin_dir_path(__FILE__) );
+require_once BLOCKS_GAMESTORE_PATH . 'blocks.php';
+
+
+// function view_block_games_line() {
+//    return '<div>Games Line</div>';
+
+// }
+
 add_filter('block_categories_all', function($categories){
 	return array_merge($categories, [
 		[
@@ -29,21 +38,24 @@ add_filter('block_categories_all', function($categories){
 
 function create_block_blocks_gamestore_block_init() {
 
-	if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
-		wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
-		return;
-	}
+	// if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
+	// 	wp_register_block_types_from_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
+	// 	return;
+	// }
 
 	
-	if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
-		wp_register_block_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
-	}
+	// if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
+	// 	wp_register_block_metadata_collection( __DIR__ . '/build', __DIR__ . '/build/blocks-manifest.php' );
+	// }
 
-	$manifest_data = require __DIR__ . '/build/blocks-manifest.php';
-	foreach ( array_keys( $manifest_data ) as $block_type ) {
+	// $manifest_data = require __DIR__ . '/build/blocks-manifest.php';
+	// foreach ( array_keys( $manifest_data ) as $block_type ) {
 		register_block_type( __DIR__ . "/build/block-hero" );
 		register_block_type( __DIR__ . "/build/block-contact" );
 		register_block_type( __DIR__ . "/build/block-header" );
-	}
+		register_block_type( __DIR__ . "/build/block-games-line", array(
+			'render_callback' => 'view_block_games_line', 
+		));
+	
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );

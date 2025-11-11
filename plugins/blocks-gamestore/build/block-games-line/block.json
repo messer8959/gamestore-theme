@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "blocks-gamestore/blocks-contact",
+  "name": "blocks-gamestore/games-line",
   "version": "0.1.0",
-  "title": "Contact Form",
+  "title": "Games Line",
   "category": "gamestore",
-  "icon": "smiley",
+  "icon": "columns",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
   "supports": {

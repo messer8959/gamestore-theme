@@ -7,8 +7,29 @@ return array(
 		'name' => 'blocks-gamestore/blocks-contact',
 		'version' => '0.1.0',
 		'title' => 'Contact Form',
-		'category' => 'widgets',
+		'category' => 'gamestore',
 		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'block-games-line' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/games-line',
+		'version' => '0.1.0',
+		'title' => 'Games Line',
+		'category' => 'gamestore',
+		'icon' => 'columns',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(
 			
@@ -54,7 +75,7 @@ return array(
 		'name' => 'blocks-gamestore/block-hero',
 		'version' => '0.1.0',
 		'title' => 'Hero Block',
-		'category' => 'widgets',
+		'category' => 'gamestore',
 		'icon' => 'smiley',
 		'description' => 'Example block scaffolded with Create Block tool.',
 		'example' => array(
