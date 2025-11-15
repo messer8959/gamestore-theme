@@ -10,3 +10,35 @@
 	color: #fff;
 	padding: 2px;
 }
+
+.wp-block-blocks-gamestore-games-line {
+	display: block;
+	margin: 0 auto;
+	padding-right: 33px;
+}
+
+.games-line-container {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+// .games-line-container .slick-track {
+// 	transition: transform 3.5s ease!important;
+// 	transition-timing-function: ease!important;
+// }
+
+.game-item {
+	width: 282px!important;
+	height: 403px;
+	position: relative;
+	border-radius: 8px;
+	// margin-left: 2px;
+	// margin-right: 2px;
+
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;	
+	}
+}
