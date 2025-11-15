@@ -1,37 +1,23 @@
 /******/ (() => { // webpackBootstrap
-/*!********************************!*\
-  !*** ./src/block-hero/view.js ***!
-  \********************************/
-// document.addEventListener('DOMContentLoaded', function () {
-//     var swiperHero = new Swiper('.hero-slider .slider-container', {
-//         loop: true,
-//         autoplay: {
-//             delay: 5000,
-//             disableOnInteraction: false,
-//         },
-//         slidesPerView: 'auto',
-//         speed: 1500,
-//         grabCursor: true,
-//         mousewheelControl: true,
-//         keyboardControl: true,
-//     });
-// });
-
+/*!**************************************!*\
+  !*** ./src/block-games-line/view.js ***!
+  \**************************************/
 $(document).ready(function () {
-  $('.slider-wrapper').slick({
+  $('.games-wrapper').slick({
     autoplay: true,
     dots: false,
     speed: 1000,
-    autoplaySpeed: 500,
+    autoplaySpeed: 1000,
     infinite: true,
-    slidesToShow: 6,
     pauseOnHover: false,
     pauseOnFocus: false,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: false,
     touchThreshold: 300,
     centerMode: true,
-    // variableWidth: true,  
+    // variableWidth: true,
+    easing: 'linear',
     responsive: [{
       // tablet      
       breakpoint: 991,
