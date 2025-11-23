@@ -1,0 +1,1 @@
+{"version":3,"file":"block-recent-news/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://blocks-gamestore/./src/block-recent-news/editor.scss"],"sourcesContent":[":root {\r\n\t--background-default: #FAFAFA;\r\n\t--background-80: rgba(250,250,250, 0.80);\r\n}\r\n"],"names":[],"sourceRoot":""}
