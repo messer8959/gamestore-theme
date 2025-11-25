@@ -59,6 +59,9 @@ function create_block_blocks_gamestore_block_init() {
 		register_block_type( __DIR__ . "/build/block-recent-news", array(
 			'render_callback' => 'view_block_recent_news',  
 		));
+		register_block_type( __DIR__ . "/build/block-subscribe", array(
+			'render_callback' => 'view_block_subscribe',  
+		));
 	
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
