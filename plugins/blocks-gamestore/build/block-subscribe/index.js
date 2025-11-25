@@ -8,7 +8,7 @@
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blocks-gamestore/subscribe","version":"0.1.0","title":"Subscribe","category":"gamestore","icon":"smiley","description":"Subscribe Block","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string"},"description":{"type":"string"},"image":{"type":"string"},"shortcode":{"type":"null"}},"textdomain":"blocks-gamestore","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blocks-gamestore/subscribe","version":"0.1.0","title":"Subscribe","category":"gamestore","icon":"smiley","description":"Subscribe Block","example":{},"supports":{"html":false},"attributes":{"title":{"type":"string"},"description":{"type":"string"},"image":{"type":"string"},"shortcode":{"type":""}},"textdomain":"blocks-gamestore","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }),
 

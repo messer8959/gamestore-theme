@@ -195,7 +195,7 @@ return array(
 				'type' => 'string'
 			),
 			'shortcode' => array(
-				'type' => 'null'
+				'type' => ''
 			)
 		),
 		'textdomain' => 'blocks-gamestore',
