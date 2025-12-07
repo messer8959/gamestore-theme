@@ -22,7 +22,7 @@
       "type": "string"
     },
     "shortcode": {
-      "type": "null"
+      "type": ""
     }
   },
   "textdomain": "blocks-gamestore",
