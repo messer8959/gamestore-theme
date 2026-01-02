@@ -87,6 +87,7 @@ video {
 	/* font: inherit; */
 	vertical-align: baseline;
 	text-decoration: none;
+	color: inherit;
 }
 
 p {
@@ -476,4 +477,8 @@ input[type="submit"] {
 
 .game-result .game-meta .game-price bdi {
 	text-decoration: none;
+}
+
+.wp-block-template-part {
+	margin-top: 0;
 }
