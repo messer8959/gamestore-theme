@@ -17,3 +17,4 @@ define('GAMESTORE_PLUGIN_PATH', plugin_dir_path(__FILE__));
 require_once(GAMESTORE_PLUGIN_PATH . '/inc/games-core.php');
 require_once(GAMESTORE_PLUGIN_PATH . '/inc/games-meta.php');
 require_once(GAMESTORE_PLUGIN_PATH . '/inc/social-share.php');
+require_once(GAMESTORE_PLUGIN_PATH . '/inc/news-term-meta.php');

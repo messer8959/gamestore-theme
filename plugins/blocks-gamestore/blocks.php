@@ -266,3 +266,59 @@ function view_block_single_news()
 
    return ob_get_clean();;
 }
+
+function view_block_news_header($attributes)
+{
+
+   $image_bg = ($attributes['image']) ? 'style="background-image: url(' . $attributes['image'] . ')"' : '';
+
+   ob_start();
+   echo '<div ' . get_block_wrapper_attributes(['class' => 'alignFull news-header-block']) . $image_bg . '>';
+   echo '<div class="wrapper">';
+   echo '<h1 class="news-header-title">' . $attributes['title'] . '</h1>';
+   echo '<p class="news-header-description">' . $attributes['description'] . '</p>';
+
+   $terms_news = get_terms(array(
+      'taxonomy' => 'news_category',
+      'hide_empty' => false,
+   ));
+
+   if (!empty($terms_news) && is_wp_error($terms_news) == false) {
+      echo '<div class="news-categories">';
+      foreach ($terms_news as $term) {
+         $icon_url = (get_term_meta($term->term_id, 'news_category_icon', true)) ? '<img src="' . wp_get_attachment_url(get_term_meta($term->term_id, 'news_category_icon', true)) . '">' : '';
+         echo '<div class="news-cat-item">
+         <a href="' . get_term_link($term) . '" class="news-category-item">' . $term->name . $icon_url . '</a>
+         </div>';
+      }
+      echo '</div>';
+   }
+
+   echo '</div>';
+   echo '</div>';
+
+   return ob_get_clean();
+}
+
+function view_block_news_box()
+   {
+
+         ob_start();
+         echo '<div ' . get_block_wrapper_attributes() . '>';
+
+
+         if (has_post_thumbnail()) {
+            echo '<h3>' . get_the_title() . '</h3>';
+            echo '<div class = "news-thumbnail">';
+            echo '<img src = "' . get_the_post_thumbnail_url() . '" class="blur-image" alt="' . get_the_title() . '">';
+            echo '<img src = "' . get_the_post_thumbnail_url() . '" class="original-image" alt="' . get_the_title() . '">';
+            echo '</div>';
+         }
+         echo '<div class="news-excerpt">';
+         the_excerpt();
+         echo '</div>';
+         echo '<a href="' . get_the_permalink() . '" class="read-more">Open the post</a>';
+         echo  '</div>';
+
+         return ob_get_clean();
+   }

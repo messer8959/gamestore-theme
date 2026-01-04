@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Gamestore General
  * Description: Core Code for Gamestore
@@ -9,7 +10,8 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
- function gamestore_remove_dashboard_widgets(){
+function gamestore_remove_dashboard_widgets()
+{
     global $wp_meta_boxes;
 
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
@@ -23,30 +25,41 @@
     unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
     unset($wp_meta_boxes['dashboard']['normal']['high']['rank_math_dashboard_widget']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
- }
- add_action('wp_dashboard_setup', 'gamestore_remove_dashboard_widgets');
+}
+add_action('wp_dashboard_setup', 'gamestore_remove_dashboard_widgets');
 
- // Allow SVG uploads
-function gamestore_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
+// Allow SVG uploads
+function gamestore_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
 }
 add_filter('upload_mimes', 'gamestore_mime_types');
 
 // Fix SVG display in media library
-function gamestore_fix_svg() {
-  echo '<style>
+function gamestore_fix_svg()
+{
+    echo '<style>
       .attachment-266x266, .thumbnail img {
           width: 100% !important;
           height: auto !important;
       }
+          .attachment-thumbnail {
+          width: auto !important;
+          height: auto !important;
+}
+          .attachment-32x32 {
+          width: auto !important;
+          height: auto !important;
+          margin-top: 16px
   </style>';
 }
 add_action('admin_head', 'gamestore_fix_svg');
 
 
 // Register Custom Post Type "News"
-function gamestore_register_news_post_type() {
+function gamestore_register_news_post_type()
+{
     $labels = array(
         'name'                  => _x('News', 'Post Type General Name', 'text_domain'),
         'singular_name'         => _x('News', 'Post Type Singular Name', 'text_domain'),
@@ -101,7 +114,8 @@ function gamestore_register_news_post_type() {
 add_action('init', 'gamestore_register_news_post_type', 0);
 
 // Register Custom Taxonomy "News Category"
-function gamestore_register_news_category_taxonomy() {
+function gamestore_register_news_category_taxonomy()
+{
     $labels = array(
         'name'                       => _x('News Categories', 'Taxonomy General Name', 'text_domain'),
         'singular_name'              => _x('News Category', 'Taxonomy Singular Name', 'text_domain'),
