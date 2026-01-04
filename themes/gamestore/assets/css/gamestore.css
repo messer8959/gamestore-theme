@@ -87,6 +87,7 @@ video {
 	/* font: inherit; */
 	vertical-align: baseline;
 	text-decoration: none;
+	color: inherit;
 }
 
 p {
@@ -175,6 +176,7 @@ html {
 	--text-secondary: rgba(14, 13, 15, 0.70);
 	--secondary-48: rgba(250, 250, 250, 0.48);
 	--white-contrast: #0A090A;
+	--black-contrast: #fff;
 	--purple-main: #6F76C0;
 	--mask-gradient: linear-gradient(270deg, rgba(14, 13, 5, 0.00) 0%, #ECECEC 79.5%);
 	--mask-gradient-second: linear-gradient(180deg, rgba(250, 250, 250, 0.00) 0%, #FAFAFA 100%);
@@ -193,6 +195,7 @@ html {
 	--text-secondary: rgba(225, 225, 225, 0.70);
 	--secondary-48: rgba(14, 13, 15, 0.60);
 	--white-contrast: #FFFFFF;
+	--black-contrast: #0A090A;
 	--wp--preset--color--base: #0E0D0F;
 	--wp--preset--color--contrast: #FFFFFF;
 	--mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0.00) 0%, #0D0B0F 79.5%);
@@ -476,4 +479,13 @@ input[type="submit"] {
 
 .game-result .game-meta .game-price bdi {
 	text-decoration: none;
+}
+
+.wp-block-template-part {
+	margin-top: 0;
+}
+
+.attachment-32x32 {
+	width: 24px;
+	height: 24px;	
 }

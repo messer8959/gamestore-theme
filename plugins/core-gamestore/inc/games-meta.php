@@ -1,5 +1,4 @@
- 
- <?php
+<?php
     add_filter('woocommerce_product_data_tabs', 'add_gamestore_tab');
     function add_gamestore_tab($tabs)
     {
