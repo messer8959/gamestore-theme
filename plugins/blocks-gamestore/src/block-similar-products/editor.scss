@@ -1,0 +1,88 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+.wp-block-blocks-gamestore-featured-products {
+    margin-top: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
+    margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
+
+    h2 {
+        line-height: 1.4;
+        background: var(--accent-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    p {
+        max-width: 980px;
+        margin-top: 24px;
+        margin-bottom: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
+        color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+        text-align: center;
+    }
+
+    .games-list {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .game-result {
+            max-width: 243px;
+            
+            img {
+                max-width: 100%;
+            }
+
+            .game-meta h3 {
+                color: var(--text-primary, #0E0D0F);
+            }
+
+            .game-platforms {
+                display: flex;
+                justify-content: start;
+                gap: 10px;
+            }
+        }
+    }
+
+}
+
+.game-result .game-meta h3 {
+	color: #fff;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	max-height: 20px;
+	font-size: 18px;
+	font-style: normal;
+	line-height: 1.2;
+}
+
+.game-result .game-meta .game-price {
+	color: #6F76C0;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4;
+	letter-spacing: 2.4px;
+	text-transform: uppercase;
+	display: flex;
+	gap: 5px;
+}

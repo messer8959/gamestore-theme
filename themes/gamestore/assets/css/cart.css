@@ -1,0 +1,117 @@
+body.woocommerce-cart .gamestore-cart-page {
+    display: block;
+}
+
+.wc-block-components-sidebar-layout {
+    gap: 24px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.gamestore-cart-page .entry-content .wc-block-components-main {
+    width: calc(100% - 495px - 24px);
+}
+
+.gamestore-cart-page .entry-content .wc-block-components-sidebar {
+    width: 495px;
+}
+
+.wc-block-components-sidebar-layout>div {
+    border-radius: 16px;
+    border: 1px solid var(--divider-main, rgba(14, 13, 15, 0.08));
+    background: var(--background-2, rgba(250, 250, 250, 0.02));
+    backdrop-filter: blur(4px);
+    padding: 24px;
+}
+
+.wc-block-cart-items thead {
+    display: none;
+}
+
+.wc-block-cart-items {}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-components-product-name {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-decoration: none;
+}
+
+.gamestore-cart-page .entry-content .wc-block-components-main .wc-block-cart-item__image a {
+    display: block;
+    width: 243px;
+    height: 340px;
+    
+}
+.wc-block-cart__main .wc-block-cart-items td {
+    border-top: 1px solid transparent !important;
+}
+.gamestore-cart-page .entry-content .wc-block-components-main .wc-block-cart-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wc-block-cart-item__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 24px;
+    align-items: flex-start;
+}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-direction: row;
+}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-components-product-price__regular,
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-formatted-money-amount {
+    background: var(--accent-gradient, linear-gradient(90deg, #3DAFE2 0%, #6F76C0 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 34px;
+    line-height: 120%;
+    font-weight: 700;
+}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link {
+    padding: 8px 24px;
+    border-radius: 5px;
+    background: var(--white-contrast, #0E0D0F);
+    color: var(--black-contrast, #fff);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 2.1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .3s;
+    border: 1px solid transparent;
+    min-height: 48px;
+}
+
+.wc-block-components-quantity-selector {
+    margin-bottom: 0 !important;
+    min-height: 48px !important;
+}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link:hover {
+    border-color: var(--white-contrast, #0E0D0F);
+
+}
+
+.wc-block-components-product-name {
+    color: var(--text-primary, #0E0D0F);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-decoration: none;
+}

@@ -1,0 +1,133 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+.wp-block-blocks-gamestore-bestseller-products {
+    margin-top: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
+    margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
+    position: relative;
+    h2 {
+        line-height: 1.4;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-align: center;
+        width: fit-content;
+        z-index: 1;
+    }
+
+    .bestseller-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 150px;
+
+        .right-bestseller-top {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .viev-all-link {
+                text-transform: uppercase;
+                border-radius: 5px;
+                background: var(--white-contrast);
+                color: var(--black-contrast, #fff);
+                padding: 20px 32px;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1;
+                letter-spacing: 2.1px;
+            }
+
+        }
+
+
+    }
+    .slick-slider {
+        position: inherit;
+    }
+    .games-list {
+         position: static;
+        .slick-arrow {
+				position: absolute;
+				z-index: 5;
+				top: 24px;
+                right: 14px;
+				background: var(--accent-gradient);
+				border-radius: 100%;
+				display: block;
+				width: 54px;
+				height: 54px;
+				color: #fff;
+				font-weight: 500;
+				font-size: 20px;
+                cursor: pointer ;
+
+			}
+            .slick-prev {
+                right: 75px;
+            }
+    }
+
+    span {
+        background: var(--accent-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        max-width: 980px;
+        margin-top: 24px;
+        margin-bottom: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
+        color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+        text-align: center;
+    }
+
+    .games-list {
+
+        // display: flex;
+        // gap: 16px;
+        // align-items: center;
+        // flex-wrap: wrap;
+        .slick-slide {
+            width: auto !important;
+        }
+
+        .game-result {
+            margin-right: 14px;
+            max-width: 243px;
+            min-width: 243px;
+
+            img {
+                max-width: 100%;
+            }
+
+            .game-meta h3 {
+                color: var(--text-primary, #0E0D0F);
+            }
+
+            .game-platforms {
+                display: flex;
+                justify-content: start;
+                gap: 10px;
+            }
+        }
+    }
+
+}
+
+.game-result .attachment-woocommerce_thumbnail {
+    height: 300px !important;
+}
+
+.wp-block-blocks-gamestore-bestseller-products .games-list .game-result img {
+    border-radius: 8px;
+}

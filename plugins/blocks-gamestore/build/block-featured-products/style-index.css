@@ -58,4 +58,8 @@
   gap: 10px;
 }
 
+.wp-block-blocks-gamestore-featured-products .games-list .game-result img {
+  border-radius: 8px;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

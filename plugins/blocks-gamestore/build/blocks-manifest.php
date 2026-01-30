@@ -1,6 +1,39 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
+	'block-bestseller-product' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/bestseller-products',
+		'version' => '0.1.0',
+		'title' => 'Bestseller Products',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Bestseller Products.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'count' => array(
+				'type' => 'number',
+				'default' => 12
+			),
+			'title' => array(
+				'type' => 'string'
+			),
+			'productType' => array(
+				'type' => 'string'
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'block-contact' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -171,6 +204,36 @@ return array(
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
 	),
+	'block-games-filter' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/games-filter',
+		'version' => '0.1.0',
+		'title' => 'Games Filter',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Games Filter.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'count' => array(
+				'type' => 'number',
+				'default' => 16
+			),
+			'title' => array(
+				'type' => 'string'
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'block-games-line' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -335,6 +398,44 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'block-product-header' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/product-header',
+		'version' => '0.1.0',
+		'title' => 'Shop Archive Header',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Shop Archive Header.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string'
+			),
+			'image' => array(
+				'type' => 'string'
+			),
+			'styleType' => array(
+				'type' => 'string'
+			),
+			'links' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'block-recent-news' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -370,6 +471,62 @@ return array(
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
 	),
+	'block-similar-products' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/similar-products',
+		'version' => '0.1.0',
+		'title' => 'Similar Products',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Similar Products.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'count' => array(
+				'type' => 'number',
+				'default' => 12
+			),
+			'title' => array(
+				'type' => 'string'
+			),
+			'link' => array(
+				'type' => 'string'
+			),
+			'linkAnchor' => array(
+				'type' => 'string'
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'block-single-game' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/single-game',
+		'version' => '0.1.0',
+		'title' => 'Single Game',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Single Game Template',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'block-single-news' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -384,6 +541,45 @@ return array(
 		),
 		'supports' => array(
 			'html' => false
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'block-slider' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/block-slider',
+		'version' => '0.1.0',
+		'title' => 'Slider Block',
+		'category' => 'gamestore',
+		'icon' => 'smiley',
+		'description' => 'Slider Block',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.slider-title'
+			),
+			'description' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.slider-description'
+			),
+			'slides' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			)
 		),
 		'textdomain' => 'blocks-gamestore',
 		'editorScript' => 'file:./index.js',
