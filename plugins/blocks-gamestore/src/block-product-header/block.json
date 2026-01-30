@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocks-gamestore/product-header",
+	"version": "0.1.0",
+	"title": "Shop Archive Header",	
+	"category": "gamestore",
+	"icon": "columns",
+	"description": "Shop Archive Header.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string"
+		},
+		"image": {
+			"type": "string"
+		},
+		"styleType": {
+			"type": "string"
+		},
+		"links": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"textdomain": "blocks-gamestore",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

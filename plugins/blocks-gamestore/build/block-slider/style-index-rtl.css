@@ -1,0 +1,58 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-slider/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+body .wp-block-blocks-gamestore-block-slider {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(var(--wp--style--root--padding-right) * -1) !important;
+  margin-right: calc(var(--wp--style--root--padding-left) * -1) !important;
+  position: relative;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content {
+  text-align: center;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content h2 {
+  line-height: 1.4;
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content p {
+  max-width: 980px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  color: var(--text-secondary, rgba(14, 13, 15, 0.7));
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media {
+  padding-top: 100px;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media > .slider-wrapper2 {
+  display: flex;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media > .slider-wrapper2 .slick-list {
+  padding: 60px 60px !important;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media > .slider-wrapper2 .slick-slide {
+  transform: scale(0.8);
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media > .slider-wrapper2 .slick-slide {
+  position: relative;
+  transition: transform 0.9s ease-in-out;
+}
+body .wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media > .slider-wrapper2 .slick-center {
+  transform: scale(1.2);
+  z-index: 8;
+}

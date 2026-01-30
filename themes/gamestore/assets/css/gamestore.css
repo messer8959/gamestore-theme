@@ -470,7 +470,7 @@ input[type="submit"] {
 
 .game-result .game-meta .game-price del {
 	order: 1;
-	color: rgba(255, 255, 255, 0.70);
+	color: var(--text-primary);
 	font-size: 16px;
 	line-height: 1.4;
 	font-weight: 500;
@@ -488,4 +488,9 @@ input[type="submit"] {
 .attachment-32x32 {
 	width: 24px;
 	height: 24px;	
+}
+
+/* Slider Arrows */
+.slick-arrow {
+	border: none;
 }

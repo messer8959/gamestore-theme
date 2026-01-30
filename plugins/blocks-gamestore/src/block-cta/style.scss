@@ -3,7 +3,7 @@
 	margin-right: calc(var(--wp--style--root--padding-right) * -1) !important;
 	margin-left: calc(var(--wp--style--root--padding-left) * -1) !important;
 	margin-top: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
-	
+
 	padding-top: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
 	padding-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem) !important;
 	text-align: center;
@@ -22,6 +22,7 @@
 		opacity: 1;
 		z-index: 0;
 	}
+
 	.cta-inner {
 		text-align: left;
 		border-radius: 8px;
@@ -40,8 +41,15 @@
 			padding: 48px;
 			max-width: 930px;
 
-			.cta-title {	
+			.cta-title {
 				margin: 0;
+
+				span {
+					background: var(--accent-gradient);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
 			}
 
 			.cta-description {
@@ -71,8 +79,9 @@
 				}
 			}
 		}
+
 		.right-part {
-			
+
 			.image-cta {
 				position: absolute;
 				right: -50px;

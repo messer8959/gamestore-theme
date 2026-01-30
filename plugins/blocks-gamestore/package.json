@@ -15,7 +15,8 @@
 		"start": "wp-scripts start --blocks-manifest"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.24.0"
+		"@wordpress/scripts": "^30.24.0",
+		"baseline-browser-mapping": "^2.9.15"
 	},
 	"dependencies": {
 		"@wordpress/components": "^30.5.0",
