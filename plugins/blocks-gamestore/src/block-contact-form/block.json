@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocks-gamestore/contact-form",
+	"version": "0.1.0",
+	"title": "Contact Form",	
+	"category": "gamestore",
+	"icon": "columns",
+	"description": "Contact Form.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string"
+		},
+		"description": {
+			"type": "string"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Send Message"
+		}
+	},
+	"textdomain": "blocks-gamestore",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -55,6 +55,85 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'block-contact-form' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/contact-form',
+		'version' => '0.1.0',
+		'title' => 'Contact Form',
+		'category' => 'gamestore',
+		'icon' => 'columns',
+		'description' => 'Contact Form.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string'
+			),
+			'description' => array(
+				'type' => 'string'
+			),
+			'buttonText' => array(
+				'type' => 'string',
+				'default' => 'Send Message'
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css'
+	),
+	'block-contact-header' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'blocks-gamestore/block-contact-header',
+		'version' => '0.1.0',
+		'title' => 'Contact Header',
+		'category' => 'gamestore',
+		'icon' => 'smiley',
+		'description' => 'Contact Header block',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.cta-title'
+			),
+			'description' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.cta-description'
+			),
+			'questions' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			),
+			'imageBg' => array(
+				'type' => 'string'
+			),
+			'images' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			)
+		),
+		'textdomain' => 'blocks-gamestore',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css'
+	),
 	'block-cta' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

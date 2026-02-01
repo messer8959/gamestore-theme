@@ -815,3 +815,49 @@ function view_block_games_filter($attributes)
 
    return $html;
 }
+
+// fuction for contact form block 
+
+function view_block_contact_form($attributes)
+{
+
+   ob_start();
+   echo '<div ' . get_block_wrapper_attributes(array('class' => 'wrapper')) . '>';
+   if ($attributes['title']) {
+      echo '<h2>' . $attributes['title'] . '</h2>';
+   }
+   if ($attributes['description']) {
+      echo '<p>' . $attributes['description'] . '</p>';
+   }
+   echo '<div class="form-inner">';
+   echo '<div class="form-icon">';
+   echo '</div>';
+   echo '<form action="/submit" method="POST">';
+   echo '<div>';
+   echo  '<label for="name">Your Name</label>';
+   echo  '<input type="text" id="name" name="user_name" required>';
+   echo '</div>';
+  
+   echo '<div>';
+   echo  '<label for="email">Your E-mail:</label>';
+   echo  '<input type="email" id="email" name="user_email" required>';
+   echo '</div>';
+  
+   echo '<div>';
+   echo  '<label for="desc">Describe the Problem:</label>';
+   echo  '<textarea id="desc" name="description" rows="5"></textarea>';
+   echo '</div>';
+  
+  echo '<button class="hero-button shadow" type="submit">' . esc_html($attributes['buttonText']) . '</button>';
+  echo '</form>';
+
+  echo '</div>';
+
+   // Cleanup
+
+   return ob_get_clean();
+
+
+
+   
+}
