@@ -55,6 +55,7 @@ function create_block_blocks_gamestore_block_init() {
 		register_block_type( __DIR__ . "/build/block-contact-header" );
 		register_block_type( __DIR__ . "/build/block-header" );
 		register_block_type( __DIR__ . "/build/block-cta" );
+		register_block_type( __DIR__ . "/build/block-services" );
 		register_block_type( __DIR__ . "/build/block-hero" );
 		register_block_type( __DIR__ . "/build/block-faq" );
 		register_block_type( __DIR__ . "/build/block-footer" );
@@ -72,10 +73,13 @@ function create_block_blocks_gamestore_block_init() {
 			'render_callback' => 'view_block_featured_products',  
 		));
 		register_block_type( __DIR__ . "/build/block-contact-form", array(
-			'render_callback' => '                                                                     ',  
+			'render_callback' => 'view_block_contact_form',  
 		));
 		register_block_type( __DIR__ . "/build/block-single-news", array(
 			'render_callback' => 'view_block_single_news',  
+		));
+		register_block_type( __DIR__ . "/build/block-taxonomy-genre", array(
+			'render_callback' => 'view_block_single_genre',  
 		));
 		register_block_type( __DIR__ . "/build/block-single-game", array(
 			'render_callback' => 'view_block_single_game',  

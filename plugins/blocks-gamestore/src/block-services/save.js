@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { title, description, questions, imageBg, image } = attributes;
+	const { title, description, image, imageBg, buttonText, isReverse } = attributes;
 	return (
 		<div {...useBlockProps.save({
 				className: 'alignFull',
@@ -9,9 +9,10 @@ export default function save({ attributes }) {
 					backgroundImage: imageBg ? `url(${imageBg})` : 'none',
 				}
 			}) }>
-			<div className='wrapper'>
+			<div className={`wrapper cta-inner ${isReverse ? 'reverse' : ''}`}>
+				<div className='left-part'>
 					<RichText.Content
-						tagName="h1"
+						tagName="h2"
 						className="cta-title"
 						value={title}
 						onChange={(title) => setAttributes({ title })}
@@ -22,16 +23,15 @@ export default function save({ attributes }) {
 						value={description}
 						onChange={(description) => setAttributes({ description })}
 					/>
-					<div className='links-list'>
-						{questions.map((question, index) => (
-							<div className='link-content' key={index}>
-								
-									{question.image && (<img src={question.image} />)}
-									{question.anchor}
-								
-							</div>
-						))}
-					</div>
+					<button className='hero-button shadow'>
+						{buttonText || 'Get Started'}
+					</button>
+				</div>
+				<div className='right-part'>
+					{image && (
+						<img className='image-cta' src={image} alt="CTA" />
+					)}
+				</div>
 			</div>
 		</div>
 	);

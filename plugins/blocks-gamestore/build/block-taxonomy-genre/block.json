@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blocks-gamestore/single-genre",
+  "version": "0.1.0",
+  "title": "Single Genre",
+  "category": "gamestore",
+  "icon": "columns",
+  "description": "Single Genre Template",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "imageBg": {
+      "type": "string"
+    }
+  },
+  "textdomain": "blocks-gamestore",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
