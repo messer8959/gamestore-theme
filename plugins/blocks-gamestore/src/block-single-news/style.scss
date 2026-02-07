@@ -1,7 +1,8 @@
 .wp-block-blocks-gamestore-single-news {
 	margin-top: 0;
 	margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem);
-
+	
+	
 	.featured-image-section {
 		margin-top: 0;
 		margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem);
@@ -125,3 +126,10 @@
 
 	}
 }
+
+.single-news {
+		figure img {
+		width: 100%;
+		border-radius: 15px;
+	}
+	}

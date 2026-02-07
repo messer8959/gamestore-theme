@@ -108,3 +108,8 @@
   width: 1em;
   margin-right: -1em;
 }
+
+.single-news figure img {
+  width: 100%;
+  border-radius: 15px;
+}

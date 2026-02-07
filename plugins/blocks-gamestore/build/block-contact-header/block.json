@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blocks-gamestore/block-contact-header",
+  "version": "0.1.0",
+  "title": "Contact Header",
+  "category": "gamestore",
+  "icon": "smiley",
+  "description": "Contact Header block",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": ".cta-title"
+    },
+    "description": {
+      "type": "string",
+      "source": "html",
+      "selector": ".cta-description"
+    },
+    "questions": {
+      "type": "array",
+      "default": []
+    },
+    "imageBg": {
+      "type": "string"
+    },
+    "images": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "blocks-gamestore",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

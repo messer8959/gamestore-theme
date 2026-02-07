@@ -1,0 +1,105 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+.wp-block-blocks-gamestore-contact-form {
+
+
+    h2 {
+        line-height: 1.4;
+        background: var(--accent-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-inner {
+        display: block;
+        position: relative;
+        margin: 100px auto;
+        max-width: 860px;
+        padding: 80px 45px;
+        box-shadow: 0px 0px 8px 0px var(--shadow-24, rgba(14, 13, 15, 0.08));
+    }
+    .form-inner::after {
+        width: 82px;
+        height: 82px;
+        content: '';
+        border-radius: 50%;
+        position: absolute;
+        left: 45%;
+        top: -41px;
+        background-color: #fff;
+    }
+    input, textarea {
+        border-radius: 3px;
+        border: 1px solid var(--divider-main, rgba(14, 13, 15, 0.08));
+        width: 100%;
+        padding: 18px 20px;
+        box-sizing: border-box;
+        background: transparent;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    button {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        color: #fff;
+    }
+     
+
+    label {
+        color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+        font-size: 14px;
+        line-height: 1;
+
+    }
+    p {
+        max-width: 980px;
+        margin-top: 24px;
+        margin-bottom: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 1;
+        color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+        text-align: center;
+    }
+
+    .form-icon {
+        position: absolute;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-image: url('data:image/svg+xml,<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 13.9978C41.0609 13.9978 42.0783 14.4193 42.8284 15.1694C43.5786 15.9196 44 16.937 44 17.9978V25.9978C44 27.0587 43.5786 28.0761 42.8284 28.8263C42.0783 29.5764 41.0609 29.9978 40 29.9978H37.876C37.3884 33.8644 35.5065 37.4202 32.5835 39.9978C29.6605 42.5755 25.8972 43.9978 22 43.9978V39.9978C25.1826 39.9978 28.2348 38.7336 30.4853 36.4831C32.7357 34.2327 34 31.1804 34 27.9978V15.9978C34 12.8152 32.7357 9.763 30.4853 7.51257C28.2348 5.26213 25.1826 3.99785 22 3.99785C18.8174 3.99785 15.7652 5.26213 13.5147 7.51257C11.2643 9.763 10 12.8152 10 15.9978V29.9978H4C2.93913 29.9978 1.92172 29.5764 1.17157 28.8263C0.421427 28.0761 0 27.0587 0 25.9978V17.9978C0 16.937 0.421427 15.9196 1.17157 15.1694C1.92172 14.4193 2.93913 13.9978 4 13.9978H6.124C6.61206 10.1316 8.49416 6.57639 11.4171 3.9992C14.3401 1.42201 18.1031 0 22 0C25.8969 0 29.6599 1.42201 32.5829 3.9992C35.5058 6.57639 37.3879 10.1316 37.876 13.9978H40ZM13.52 29.5678L15.64 26.1758C17.5462 27.3699 19.7507 28.0015 22 27.9978C24.2493 28.0015 26.4538 27.3699 28.36 26.1758L30.48 29.5678C27.9385 31.1601 24.9991 32.0025 22 31.9978C19.0009 32.0025 16.0615 31.1601 13.52 29.5678Z" fill="url(%23paint0_linear_1471_4118)"/><defs><linearGradient id="paint0_linear_1471_4118" x1="-1.76552e-07" y1="21.6323" x2="44" y2="21.6323" gradientUnits="userSpaceOnUse"><stop stop-color="%233DAFE2"/><stop offset="1" stop-color="%236F76C0"/></linearGradient></defs></svg>');
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid var(--divider-main, rgba(14, 13, 15, 0.08));
+        box-shadow: 0px 0px 8px 0px var(--shadow-24, rgba(14, 13, 15, 0.08));
+        top: -40px;
+        left: 45%;
+        z-index: 3;
+    }
+
+}
+
+.wp-block-blocks-gamestore-featured-products .games-list .game-result img {
+    border-radius: 8px;
+}

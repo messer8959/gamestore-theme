@@ -267,6 +267,80 @@ function view_block_single_news()
    return ob_get_clean();;
 }
 
+function view_block_single_genre($attributes)
+{
+   ob_start();
+
+   $image_bg = ($attributes['imageBg']) ? 'style="background-image: url(' . $attributes['imageBg'] . ')"' : '';
+
+
+
+   echo '<div class="featured-image-section" ' . $image_bg . '>';
+
+   echo '<h1>' . single_term_title('', false) . '</h1>';
+
+   echo '</div>';
+   $term_name = single_term_title('', false);
+   $featured_games = wc_get_products(array(
+      'status' => 'publish',
+      'limit' => 8,
+      'featured' => true,
+      'tax_query' => array(
+         array(
+            'taxonomy' => 'genre', // Название таксономии (например: product_cat, product_tag)
+            'field'    => 'slug',
+            'terms'    => $term_name, // Ярлык термина
+         ),
+      ),
+   ));
+   echo '<div ' . get_block_wrapper_attributes(array('class' => 'wrapper')) . '>';
+
+
+   $platforms = array('Xbox', 'PlayStation', 'PC',);
+   $platforms_html = '';
+
+
+   if (!empty($featured_games)) {
+
+      echo '<div class ="games-list">';
+      foreach ($featured_games as $game) {
+         $platforms_html = '';
+         echo '<div class ="game-result">';
+         echo '<a href="' . esc_url($game->get_permalink()) . '">';
+         echo $game->get_image(); // Display product image
+         echo '<div class ="game-meta">';
+         echo '<div class="game-price">' . $game->get_price_html() . '</div>';
+         echo '<h3>' . $game->get_name() . '</h3>';
+         echo '<div class ="game-platforms">';
+         echo '<div class ="platform_pc">';
+         echo '<image src="' . plugin_dir_url(__FILE__) . 'assets/pc.png" alt="PC Icon"/>';
+         echo '</div>';
+         echo '<div class ="platform_xbox">';
+         echo '<image src="' . plugin_dir_url(__FILE__) . 'assets/xbox.png" alt="Xbox Icon"/>';
+         echo '</div>';
+         echo '<div class ="platform_playstation">';
+         echo '<image src="' . plugin_dir_url(__FILE__) . 'assets/playstation.png" alt="Playstation Icon"/>';
+         echo '</div>';
+         foreach ($platforms as $platform) {
+            $platforms_html .= (get_post_meta($game->get_id(), 'platform_' . strtolower($platform), true) ? '<div class="platform_' . strtolower($platform) . '">Xbox</div>' : '');
+         }
+         echo $platforms_html;
+         echo '</div>';
+         echo '</div>';
+         echo '</a>';
+         echo '</div>';
+      }
+
+      echo '</div>';
+   } else {
+      echo '<p>No featured products found.</p>';
+   }
+   echo '</div>';
+
+
+   return ob_get_clean();;
+}
+
 function view_block_news_header($attributes)
 {
 
@@ -559,7 +633,7 @@ function view_block_product_header($attributes)
 
 function view_block_bestseller_products($attributes)
 {
-   if(isset($attributes['productType']) && $attributes['productType'] == 'cross-seller') {
+   if (isset($attributes['productType']) && $attributes['productType'] == 'cross-seller') {
 
       $cross_sell_ids = array();
 
@@ -814,4 +888,46 @@ function view_block_games_filter($attributes)
    $html .= '</div>';
 
    return $html;
+}
+
+// fuction for contact form block 
+
+function view_block_contact_form($attributes)
+{
+
+   ob_start();
+   echo '<div ' . get_block_wrapper_attributes(array('class' => 'wrapper')) . '>';
+   if ($attributes['title']) {
+      echo '<h2>' . $attributes['title'] . '</h2>';
+   }
+   if ($attributes['description']) {
+      echo '<p>' . $attributes['description'] . '</p>';
+   }
+   echo '<div class="form-inner">';
+   echo '<div class="form-icon">';
+   echo '</div>';
+   echo '<form action="/submit" method="POST">';
+   echo '<div>';
+   echo  '<label for="name">Your Name</label>';
+   echo  '<input type="text" id="name" name="user_name" required>';
+   echo '</div>';
+
+   echo '<div>';
+   echo  '<label for="email">Your E-mail:</label>';
+   echo  '<input type="email" id="email" name="user_email" required>';
+   echo '</div>';
+
+   echo '<div>';
+   echo  '<label for="desc">Describe the Problem:</label>';
+   echo  '<textarea id="desc" name="description" rows="5"></textarea>';
+   echo '</div>';
+
+   echo '<button class="hero-button shadow" type="submit">' . esc_html($attributes['buttonText']) . '</button>';
+   echo '</form>';
+
+   echo '</div>';
+
+   // Cleanup
+
+   return ob_get_clean();
 }
